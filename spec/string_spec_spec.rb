@@ -1,5 +1,5 @@
 require 'rspec'
-require 'palindrome_ext/string'
+require 'palindrome_ext'
 
 RSpec.describe 'String Spec' do
 
