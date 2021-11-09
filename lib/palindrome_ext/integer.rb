@@ -1,7 +1,9 @@
-require 'palindrome_ext/string'
+# frozen_string_literal: true
+
+require "palindrome_ext/string"
 
 class Integer
   def palindrome?
-    self.to_s.palindrome? true
+    to_s.palindrome? true
   end
 end
