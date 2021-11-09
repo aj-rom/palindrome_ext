@@ -27,6 +27,11 @@ RSpec.describe "String Spec" do
     str = "Don't nod."
     expect(str.palindrome?).to be true
   end
+
+  it "returns true for single characters" do
+    str = "a"
+    expect(str.palindrome?).to be true
+  end
 end
 
 RSpec.describe "Strict String Spec" do
