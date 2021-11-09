@@ -1,4 +1,6 @@
 # PalindromeExt
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+
 
 A gem focused on extending Ruby's `String` and `Integer` classes by adding a `.palindrome?` method, 
 to solve a common algorithm problem of determining whether a string or integer may be a palindrome.
@@ -48,9 +50,11 @@ require 'palindrome_ext/integer'
 
 ## Development
 
-After cloning this repo, navigate to the root directory and run `bundle install` to install dependencies and this gem on your machine.
+After forking this repo, navigate to the root directory and run `bundle install` to install dependencies and this gem on your machine.
 
 To run tests, simply run `rspec` in the root directory.
+
+To check if there are any style offenses in your forked repository, run `rubocop`. To attempt to automatically fix these offenses, run `rubocop -A`.
 
 ## Contributing
 
