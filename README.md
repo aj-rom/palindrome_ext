@@ -52,11 +52,11 @@ require 'palindrome_ext/integer'
 
 ## Development
 
-After forking this repo, navigate to the root directory and run `bundle install` to install dependencies and this gem on your machine.
+After forking this repo, navigate to the root directory and run `$ bundle install` to install dependencies and this gem on your machine.
 
-To run tests, simply run `rspec` in the root directory.
+To run tests, simply run `$ rspec` in the root directory.
 
-To check if there are any style offenses in your forked repository, run `rubocop`. To attempt to automatically fix these offenses, run `rubocop -A`.
+To check if there are any style offenses in your forked repository, run `$ rubocop`. To attempt to automatically fix these offenses, run `$ rubocop -A`.
 
 ## Contributing
 
