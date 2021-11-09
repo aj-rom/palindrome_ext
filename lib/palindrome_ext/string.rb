@@ -2,7 +2,7 @@
 
 # Overrides Default String Class by adding 'palindrome?' method
 class String
-  def palindrome?(strict: false)
+  def palindrome?(strict = false)
     return false if length < 2
 
     str = self

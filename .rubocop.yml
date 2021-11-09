@@ -91,6 +91,8 @@ Style/NumberedParameters: # new in 1.22
   Enabled: true
 Style/NumberedParametersLimit: # new in 1.22
   Enabled: true
+Style/OptionalBooleanParameter:
+  Enabled: false
 Style/QuotedSymbols: # new in 1.16
   Enabled: true
 Style/RedundantArgument: # new in 1.4
