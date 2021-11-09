@@ -1,8 +1,7 @@
 # PalindromeExt
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/palindrome_ext`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A gem focused on extending Ruby's `String` and `Integer` classes by adding a `.palindrome?` method, 
+to solve a common algorithm problem of determining whether a string or integer may be a palindrome.
 
 ## Installation
 
@@ -22,17 +21,40 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### String
+```ruby
+require 'palindrome_ext/string'
+
+# Palindrome - Not worrying about whitespace, case, or punctuation
+'Example...'.palindrome? # => false
+'Radar?!?'.palindrome? # => true
+
+# Strict Palindrome - Must match case, whitespace, and punctuation
+'Radar'.palindrome? true # => false
+'RadaR'.palindrome? true # => true
+```
+
+### Integer
+```ruby
+require 'palindrome_ext/integer'
+
+# Palindrome - Check if the integer is a palindrome
+112.palindrome? # => false
+101.palindrome? # => true
+
+# And works on operations
+(91 * 99).palindrome? # => true
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After cloning this repo, navigate to the root directory and run `bundle install` to install dependencies and this gem on your machine.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To run tests, simply run `rspec` in the root directory.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/palindrome_ext. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/aj-rom/palindrome_ext. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
