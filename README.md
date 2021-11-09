@@ -1,6 +1,8 @@
 # PalindromeExt
+[![Ruby Gem Version](https://badgen.net/rubygems/v/palindrome_ext)](https://rubygems.org/gems/palindrome_ext)
+[![Downloads](https://badgen.net/rubygems/dt/palindrome_ext)](https://rubygems.org/gems/palindrome_ext)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
-
+[![Platform](https://badgen.net/rubygems/p/palindrome_ext)](https://www.ruby-lang.org/en/)
 
 A gem focused on extending Ruby's `String` and `Integer` classes by adding a `.palindrome?` method, 
 to solve a common algorithm problem of determining whether a string or integer may be a palindrome.
