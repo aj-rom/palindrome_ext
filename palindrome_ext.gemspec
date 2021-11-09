@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Overrides Ruby's default String, Integer, and Array classes to determine whether or not their contents can be considered a palindrome."
   spec.homepage      = "https://github.com/aj-rom/palindrome_ext"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 2.5.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
