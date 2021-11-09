@@ -19,11 +19,7 @@ jobs:
       - name: Setup Ruby and Install Dependencies
       - uses: ruby/setup-ruby@v1.85.0
         with:
-          # Engine and version to use, see the syntax in the README. Reads from .ruby-version or .tool-versions if unset.
           ruby-version: 2.5
-          # The version of Bundler to install. Either 'none', 'latest', 'Gemfile.lock', or a version number (e.g., 1, 2, 2.1.4).
           bundler: latest
           bundler-cache: true
-
-      - name: Run RSPec Tests
-        run: bundle exec rspec
+      - run: bundle exec rake
