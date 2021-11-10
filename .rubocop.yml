@@ -1,4 +1,7 @@
 AllCops:
+  Exclude:
+    - 'palindrome_ext.gemspec'
+  NewCops: enable
   TargetRubyVersion: 2.5
 
 Style/StringLiterals:
@@ -105,8 +108,3 @@ Style/StringChars: # new in 1.12
   Enabled: true
 Style/SwapValues: # new in 1.1
   Enabled: true
-
-AllCops:
-  Exclude:
-    - 'palindrome_ext.gemspec'
-  NewCops: enable
