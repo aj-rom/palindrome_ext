@@ -41,6 +41,7 @@ GEM
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
     unicode-display_width (2.1.0)
+    yard (0.9.26)
 
 PLATFORMS
   universal-darwin-20
@@ -49,10 +50,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bundler (~> 2.1)
   palindrome_ext!
-  rake (~> 13.0)
-  rspec (~> 3.2)
-  rubocop (~> 1.7)
+  rake (~> 13.0, >= 13.0.6)
+  rspec (~> 3.10)
+  rubocop (~> 1.22, >= 1.22.3)
+  yard (~> 0.9.26)
 
 BUNDLED WITH
    2.2.28
