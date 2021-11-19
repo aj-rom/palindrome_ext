@@ -2,6 +2,7 @@
 
 require "rspec"
 require "palindrome_ext/array"
+require "benchmark"
 
 RSpec.describe "Array Spec" do
   it "has a 'palindrome?' class method" do
