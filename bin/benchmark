@@ -1,0 +1,59 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "palindrome_ext"
+require "benchmark"
+include Benchmark
+
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+# require "pry"
+# Pry.start
+
+# require "irb"
+# IRB.start(__FILE__)
+
+NUM = 50_000
+LABEL_WIDTH = 10
+SIZE = 1000
+
+def start_section(title = "")
+  puts ""
+  tags = Array.new(55 - title.length, "-").join
+  puts "#{title} #{tags}"
+end
+
+start_section "String #palindrome?"
+str_palindrome = Array.new(SIZE, "AA").join
+str_non_palindrome = Array.new(SIZE, "AB").join
+Benchmark.benchmark(CAPTION, LABEL_WIDTH, FORMAT) do |x|
+  x.report("worst case") { NUM.times { str_palindrome.palindrome? } }
+  x.report("best case") { NUM.times { str_non_palindrome.palindrome? } }
+end
+
+start_section "String #palidnrome?(strict = false)"
+str_palindrome_white_space = Array.new(SIZE, "A a  a A").join
+str_non_palindrome_white_space = Array.new(SIZE, "A  b c").join
+Benchmark.benchmark(CAPTION, LABEL_WIDTH, FORMAT) do |x|
+  x.report("worst case") { NUM.times { str_palindrome_white_space.palindrome? false } }
+  x.report("best case") { NUM.times { str_non_palindrome_white_space.palindrome? false } }
+end
+
+start_section "Integer #palindrome?"
+int_palindrome = Array.new(SIZE, 1001).join.to_i
+int_non_palindrome = Array.new(SIZE, 10).join.to_i
+Benchmark.benchmark(CAPTION, LABEL_WIDTH, FORMAT) do |x|
+  x.report("worst case") { NUM.times { int_palindrome.palindrome? } }
+  x.report("best case") { NUM.times { int_non_palindrome.palindrome? } }
+end
+
+start_section "Array #palindrome?"
+arr_palindrome = Array.new(SIZE, "AA")
+arr_non_palindrome = Array.new(SIZE, "AB")
+Benchmark.benchmark(CAPTION, LABEL_WIDTH, FORMAT) do |x|
+  x.report("worst case") { NUM.times { arr_palindrome.palindrome? } }
+  x.report("best case") { NUM.times { arr_non_palindrome.palindrome? } }
+end
