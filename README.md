@@ -24,18 +24,20 @@ Or install it yourself as:
     $ gem install palindrome_ext
 
 ## Usage
+Detailed documentation can be found at https://rubydoc.info/gems/palindrome_ext.
 
 ### String
 ```ruby
 require 'palindrome_ext/string'
 
-# Palindrome - Not worrying about whitespace, case, or punctuation
+# Palindrome - Case Sensitive & Whitespace Sensitive
 'Example...'.palindrome? # => false
-'Radar?!?'.palindrome? # => true
+'radar'.palindrome? # => true
+'Radar'.palindrome? # => false
 
-# Strict Palindrome - Must match case, whitespace, and punctuation
-'Radar'.palindrome? true # => false
-'RadaR'.palindrome? true # => true
+# Non-Strict Palindrome - Removes whitespace, punctuation, and capitalization before checking.
+'Radar'.palindrome? false # => true
+'RadaR'.palindrome? # => false
 ```
 
 ### Integer
@@ -52,15 +54,31 @@ require 'palindrome_ext/integer'
 
 ## Development
 
-After forking this repo, navigate to the root directory and run `$ bundle install` to install dependencies and this gem on your machine.
+### Dependency Management
+After forking this repo, navigate to the root directory and run:
 
-To run tests, simply run `$ rspec` in the root directory.
+    $ bundle install
 
-To check if there are any style offenses in your forked repository, run `$ rubocop`. To attempt to automatically fix these offenses, run `$ rubocop -A`.
+### Testing with RSpec
+To run tests, simply run:
+
+    $ rake test
+
+### Linting with RuboCop
+To check if there are any style offenses in your forked repository and automatically fix these offenses, run:
+
+    $ rake lint
+
+### Benchmarking
+To execute a benchmark report, run:
+
+    $ rake benchmark
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/aj-rom/palindrome_ext. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/aj-rom/palindrome_ext.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/aj-rom/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -68,4 +86,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PalindromeExt project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PalindromeExt project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/aj-rom/palindrome_ext/blob/master/CODE_OF_CONDUCT.md).

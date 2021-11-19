@@ -3,6 +3,7 @@ AllCops:
     - 'palindrome_ext.gemspec'
   NewCops: enable
   TargetRubyVersion: 2.5
+  SuggestExtensions: false
 
 Style/StringLiterals:
   Enabled: true
