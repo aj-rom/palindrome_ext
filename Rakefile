@@ -2,11 +2,24 @@
 
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
-
-RSpec::Core::RakeTask.new(:spec)
-
 require "rubocop/rake_task"
 
-RuboCop::RakeTask.new
+# RSpec Testing Task.
+RSpec::Core::RakeTask.new(:test)
 
-task default: %i[spec rubocop]
+# RuboCop Lint Task
+RuboCop::RakeTask.new(:lint) do |t|
+  t.options = %w[-A --extra-details]
+end
+
+# Generate Documentation (located in /doc/index.html )
+task :doc do
+  exec "yard doc"
+end
+
+# Run Benchmarks
+task :benchmark do
+  exec "ruby bin/benchmark"
+end
+
+task default: %i[test lint]
