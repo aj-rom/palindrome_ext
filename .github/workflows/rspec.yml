@@ -1,21 +1,22 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Run Tests & Lint
-
-# Controls when the workflow will run
+name: RSpec
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'lib/**'
+      - 'spec/**'
   pull_request:
     branches: [ master ]
-
+    paths:
+      - 'lib/**'
+      - 'spec/**'
 jobs:
-  test:
+  rspec:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.5
+          ruby-version: 3.0.x
           bundler-cache: true
       - run: bundle exec rspec
