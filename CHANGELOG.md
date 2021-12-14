@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.1](https://www.github.com/aj-rom/palindrome_ext/compare/v0.4.0...v0.4.1) (2021-12-14)
+
+
+### Bug Fixes
+
+* **integer:** remove unnecessary default param ([d0fd029](https://www.github.com/aj-rom/palindrome_ext/commit/d0fd02981cad17208e814701355f3a6dbef637dc))
+
 ## [0.4.0](https://www.github.com/aj-rom/palindrome_ext/compare/v0.3.1...v0.4.0) (2021-12-14)
 
 
