@@ -1,0 +1,20 @@
+name: RuboCop
+on:
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'lib/**'
+      - 'spec/**'
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: false
+      - uses: reviewdog/action-rubocop@v2
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          reporter: github-pr-review
