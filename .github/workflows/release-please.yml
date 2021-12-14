@@ -24,6 +24,8 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
+        env:
+          BUNDLE_DEPLOYMENT: false
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Release Gem

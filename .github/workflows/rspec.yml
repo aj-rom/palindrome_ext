@@ -18,6 +18,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
-      - run: |
-          bundle
-          bundle exec rspec
+          bundler-cache: true
+        env:
+          BUNDLE_DEPLOYMENT: false
+      - run: bundle exec rspec
