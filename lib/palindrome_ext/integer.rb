@@ -6,6 +6,6 @@ require "palindrome_ext/string"
 class Integer
   # @return [Boolean] Whether or not the Integer is a palindrome.
   def palindrome?
-    to_s.palindrome? true
+    to_s.palindrome?
   end
 end
