@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://www.github.com/aj-rom/palindrome_ext/compare/v0.4.1...v0.5.0) (2021-12-14)
+
+
+### Features
+
+* bump version ([c7d6fc4](https://www.github.com/aj-rom/palindrome_ext/commit/c7d6fc4e260dc85cbed4edc8c66b474a83d89263))
+
 ### [0.4.1](https://www.github.com/aj-rom/palindrome_ext/compare/v0.4.0...v0.4.1) (2021-12-14)
 
 
