@@ -20,5 +20,5 @@ jobs:
           ruby-version: 3.0
           bundler-cache: true
         env:
-          BUNDLE_DEPLOYMENT: false
+          BUNDLE_FROZEN: false
       - run: bundle exec rspec
