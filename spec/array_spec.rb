@@ -2,7 +2,6 @@
 
 require "rspec"
 require "palindrome_ext/array"
-require "benchmark"
 
 RSpec.describe "Array Spec" do
   it "has a 'palindrome?' class method" do
@@ -18,5 +17,17 @@ RSpec.describe "Array Spec" do
   it "returns false for a non-palindrome" do
     arr = [1, 0, 2, 4]
     expect(arr.palindrome?).to be false
+  end
+end
+
+RSpec.describe "Array #palindrome? strict = false" do
+  it "returns true for a non-strict palindrome" do
+    arr = %w[a . B b A]
+    expect(arr.palindrome?(false)).to be true
+  end
+
+  it "returns false for a non-strict non-palindrome" do
+    arr = %w[a / B c /]
+    expect(arr.palindrome?(false)).to be false
   end
 end
