@@ -3,11 +3,21 @@
 require "rspec"
 require "palindrome_ext/string"
 
-RSpec.describe "String Spec" do
-  it "has a 'palindrome?' class method" do
+RSpec.describe String do
+  it "has a 'palindrome?' instance method" do
     expect { "Test".palindrome? }.to_not raise_error
   end
 
+  it "can take an argument" do
+    expect { "strict_pal".palindrome? false }.to_not raise_error
+  end
+
+  it "defaults to strict" do
+    expect("Wow".palindrome?).to be false
+  end
+end
+
+RSpec.describe "#palindrome? strict = true" do
   it "returns true for a palindrome" do
     str = "AABBAA"
     expect(str.palindrome?).to be true
@@ -34,16 +44,23 @@ RSpec.describe "String Spec" do
   end
 end
 
-RSpec.describe "Strict String Spec" do
-  it "returns true for a strict palindrome" do
-    str = "A /Bb/ a"
-    expect(str.palindrome?).to be false
-    expect(str.palindrome?(false)).to be true
+RSpec.describe "#palindrome? strict = false" do
+  let(:non_strict_pal) { "A /Bb/ a" }
+  let(:non_strict_non_pal) { "Evil Olives" }
+  let(:strict_pal) { "wow" }
+
+  it "returns true for a non-strict palindrome" do
+    expect(non_strict_pal.palindrome?).to be false
+    expect(non_strict_pal.palindrome?(false)).to be true
   end
 
-  it "returns false for a strict non-palindrome" do
-    str = "Evil Olive"
-    expect(str.palindrome?).to be false
-    expect(str.palindrome?(false)).to be true
+  it "returns false for a non-strict non-palindrome" do
+    expect(non_strict_non_pal.palindrome?).to be false
+    expect(non_strict_non_pal.palindrome?(false)).to be false
+  end
+
+  it "returns true for a strict palindrome" do
+    expect(strict_pal.palindrome?).to be true
+    expect(strict_pal.palindrome?(false)).to be true
   end
 end
