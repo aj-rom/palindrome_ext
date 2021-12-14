@@ -1,10 +1,5 @@
 name: RSpec
 on:
-  push:
-    branches: [ master ]
-    paths:
-      - 'lib/**'
-      - 'spec/**'
   pull_request:
     branches: [ master ]
     paths:
