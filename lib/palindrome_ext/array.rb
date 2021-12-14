@@ -11,7 +11,6 @@ class Array
 
     arr = map { |x| x.to_s.downcase.tr("^a-z0-9", "") }
     arr.delete_if(&:empty?)
-    puts arr
     arr == arr.reverse
   end
 end
