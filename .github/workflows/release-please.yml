@@ -12,15 +12,15 @@ jobs:
         id: release
         with:
           release-type: ruby
-          package-name: palindrome_ext
-          version-file: "lib/**/version.rb"
+          package-name: ${{ env.GEM_NAME }}
+          version-file: "lib/${{ env.GEM_NAME }}/version.rb"
 
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.x
+          ruby-version: 3.0
           bundler-cache: true
         if: ${{ steps.release.outputs.release_created }}
 
@@ -36,3 +36,4 @@ jobs:
         env:
           token: ${{ secrets.GH_TOKEN }}
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GEM_NAME: "palindrome_ext"
