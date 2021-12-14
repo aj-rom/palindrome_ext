@@ -15,7 +15,8 @@ jobs:
           release-type: ruby
           package-name: ${{ env.GEM_NAME }}
           version-file: "lib/${{ env.GEM_NAME }}/version.rb"
-
+        env:
+          GEM_NAME: "palindrome_ext"
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
 
@@ -23,6 +24,8 @@ jobs:
         with:
           ruby-version: 3.0
           bundler-cache: true
+        env:
+          BUNDLE_DEPLOYMENT: false
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Release Gem
@@ -35,5 +38,4 @@ jobs:
           gem push *.gem
         if: ${{ steps.release.outputs.release_created }}
         env:
-          GEM_NAME: "palindrome_ext"
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
